@@ -425,4 +425,9 @@
   if (window.AOS) AOS.refreshHard();
   window.addEventListener('scroll', spyCats, { passive: true });
   document.addEventListener('rimal:lang', function () { renderChips(); renderMenu(); renderSpecialties(); updateCart(); if (window.AOS) AOS.refreshHard(); });
+
+  // demo notice modal — opens on every page load (after the loader fades)
+  window.addEventListener('load', function () {
+    setTimeout(function () { if (document.getElementById('demo-modal')) openModal('#demo-modal'); }, 700);
+  });
 })();

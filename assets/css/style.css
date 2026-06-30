@@ -1406,6 +1406,91 @@ html:lang(en) .cart-drawer.open {
   color: #c8a24c;
 }
 
+.demo-dialog {
+  width: min(440px, 100%);
+  text-align: center;
+}
+
+.demo-modal__body {
+  padding: 34px 28px 28px;
+}
+
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(200, 162, 76, 0.15);
+  color: #9a7b32;
+  border: 1px solid rgba(200, 162, 76, 0.5);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.demo-title {
+  font-family: "Aref Ruqaa", "IBM Plex Sans Arabic", Georgia, serif;
+  font-size: 1.7rem;
+  margin: 0 0 10px;
+  color: #531417;
+}
+
+.demo-by {
+  color: #2a1e16;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.demo-prompt {
+  color: #836f5c;
+  font-size: 0.92rem;
+  margin: 0 0 18px;
+}
+
+.demo-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.demo-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(42, 30, 22, 0.12);
+  background: #fff;
+  color: #2a1e16;
+  font-weight: 700;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.demo-contact:hover {
+  border-color: #c8a24c;
+  color: #c0142b;
+  transform: translateY(-2px);
+}
+
+.demo-contact i {
+  font-size: 1.2rem;
+}
+
+.demo-contact.wa {
+  background: #20bd5a;
+  color: #fff;
+  border-color: #20bd5a;
+}
+
+.demo-contact.wa:hover {
+  background: #1aa94f;
+  color: #fff;
+  border-color: #1aa94f;
+}
+
 .co-success {
   text-align: center;
   padding: 30px 20px;
