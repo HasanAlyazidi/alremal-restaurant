@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#531417">
+  <meta name="description" content="مطاعم الرمال — نكهات شعبية يمنية وسعودية أصيلة في جدة. مندي، مضغوط، مظبي، معصوب، كبسات. اطلب أونلاين.">
+  <title>مطاعم الرمال | ALREMAL RESTAURANT — جدة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/font-awesome/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link id="bs-rtl" href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
+  <link href="assets/css/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="home">
+
+  <!-- LOADING -->
+  <div id="loading"><div class="loader-mark"></div></div>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container-rm topbar__inner">
+      <div class="topbar__group">
+        <span class="topbar__item" id="open-status">
+          <span class="status-dot"></span><span data-ar="مفتوح الآن" data-en="Open now">مفتوح الآن</span>
+          <span data-ar="· حتى ٢ صباحاً" data-en="· until 2 AM">· حتى ٢ صباحاً</span>
+        </span>
+      </div>
+      <div class="topbar__group hide-sm">
+        <a class="topbar__item" href="tel:+966500549144" dir="ltr"><i class="fa-solid fa-phone"></i> +966 50 054 9144</a>
+        <a class="topbar__item" href="#location" data-ar="جدة · حي الورود" data-en="Jeddah · Al-Wurood"><i class="fa-solid fa-location-dot"></i> <span data-ar="جدة · حي الورود" data-en="Jeddah · Al-Wurood">جدة · حي الورود</span></a>
+      </div>
+      <div class="topbar__group">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar-rm" id="navbar">
+    <div class="container-rm navbar-rm__inner">
+      <a class="navbar-rm__brand" href="#home">
+        <img src="assets/images/brand/logo.jpg" alt="شعار مطاعم الرمال">
+        <span>
+          <span class="b-name">مطاعم الرمال</span>
+          <span class="b-sub">ALREMAL</span>
+        </span>
+      </a>
+      <div class="navbar-rm__links" id="nav-links">
+        <a href="#menu" class="hscroll" data-ar="المنيو" data-en="Menu">المنيو</a>
+        <a href="#specialties" class="hscroll" data-ar="المميزة" data-en="Signature">المميزة</a>
+        <a href="#about" class="hscroll" data-ar="عن المطعم" data-en="About">عن المطعم</a>
+        <a href="#location" class="hscroll" data-ar="الموقع" data-en="Location">الموقع</a>
+        <a href="#contact" class="hscroll" data-ar="تواصل" data-en="Contact">تواصل</a>
+      </div>
+      <div class="navbar-rm__actions">
+        <button class="nav-cart" id="cart-btn" aria-label="السلة">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <a class="btn-rm btn-sm-rm d-none d-sm-inline-flex" href="#menu" data-ar="اطلب الآن" data-en="Order now"><i class="fa-solid fa-utensils"></i><span data-ar="اطلب الآن" data-en="Order now">اطلب الآن</span></a>
+        <button class="navbar-toggler-rm" id="nav-toggle" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero__glow"></div>
+    <svg class="dunes" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M-50,110 C 360,40 760,180 1490,80"></path>
+      <path d="M-50,180 C 380,120 720,250 1490,150"></path>
+      <path d="M-50,250 C 400,190 700,320 1490,220"></path>
+      <path d="M-50,330 C 360,270 780,400 1490,300"></path>
+      <path d="M-50,410 C 420,350 720,470 1490,380"></path>
+      <path d="M-50,490 C 380,430 760,540 1490,450"></path>
+    </svg>
+    <div class="container-rm hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow"><i class="fa-solid fa-fire"></i> <span data-ar="مطبخ شعبي على الحطب والتنور" data-en="Traditional fire & clay-oven kitchen">مطبخ شعبي على الحطب والتنور</span></span>
+        <h1 class="hero__title">مطاعم <span class="accent">الرمال</span></h1>
+        <p class="hero__tagline" data-ar="نكهات يمنية وسعودية أصيلة في قلب جدة — مندي، مضغوط، مظبي، ومعصوب على أصوله." data-en="Authentic Yemeni & Saudi flavors in the heart of Jeddah — mandi, madghout, mathbi & ma'soub done right.">نكهات يمنية وسعودية أصيلة في قلب جدة — مندي، مضغوط، مظبي، ومعصوب على أصوله.</p>
+        <div class="hero__rating">
+          <span class="hero__stars">★★★★<span style="opacity:.5">★</span></span>
+          <b>4.4</b>
+          <span data-ar="من ٤٤٥ تقييم" data-en="from 445 reviews">من ٤٤٥ تقييم</span>
+        </div>
+        <div class="hero__ctas">
+          <a class="btn-rm" href="#menu"><i class="fa-solid fa-utensils"></i> <span data-ar="تصفّح المنيو" data-en="Browse menu">تصفّح المنيو</span></a>
+          <a class="btn-rm btn-wa" href="https://wa.me/966500549144" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span data-ar="اطلب عبر واتساب" data-en="Order on WhatsApp">اطلب عبر واتساب</span></a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <div class="hero__plate" style="background-image:url('assets/images/brand/cover.jpg')"></div>
+        <div class="hero__badge">
+          <span class="num" data-ar="٢٤" data-en="24">٢٤</span>
+          <span class="lbl" data-ar="ساعة خدمة" data-en="hrs service">ساعة خدمة</span>
+        </div>
+      </div>
+    </div>
+    <a href="#specialties" class="hero__scroll hscroll" aria-label="scroll"><i class="fa-solid fa-chevron-down"></i></a>
+  </header>
+
+  <!-- SPECIALTIES -->
+  <section class="section section--tint" id="specialties">
+    <div class="container-rm">
+      <div class="section__head" data-aos="fade-up">
+        <span class="section__eyebrow" data-ar="أطباقنا المميزة" data-en="Signature dishes">أطباقنا المميزة</span>
+        <h2 class="section__title" data-ar="نجوم المائدة" data-en="Stars of the table">نجوم المائدة</h2>
+        <p class="section__subtitle" data-ar="الأطباق التي يعود إليها زبائننا كل مرة." data-en="The dishes our guests come back for, every time.">الأطباق التي يعود إليها زبائننا كل مرة.</p>
+      </div>
+      <div class="spec-row" id="spec-row" data-aos="fade-up"><!-- JS --></div>
+    </div>
+  </section>
+
+  <div class="container-rm"><div class="dune-divider"><svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C 240,10 480,54 720,32 S 1200,8 1440,36"></path><path d="M0,52 C 300,26 600,60 900,40 S 1260,22 1440,48"></path></svg></div></div>
+
+  <!-- MENU -->
+  <section class="section" id="menu">
+    <div class="container-rm">
+      <div class="section__head" data-aos="fade-up">
+        <span class="section__eyebrow" data-ar="قائمة الطعام" data-en="Our menu">قائمة الطعام</span>
+        <h2 class="section__title" data-ar="المنيو الكامل" data-en="Full menu">المنيو الكامل</h2>
+        <p class="section__subtitle"><span id="menu-count">٩٤</span> <span data-ar="صنف · اضغط الصورة للتكبير" data-en="items · tap an image to enlarge">صنف · اضغط الصورة للتكبير</span></p>
+      </div>
+    </div>
+    <div class="menu-cats" id="menu-cats">
+      <div class="container-rm">
+        <div class="menu-cats__scroll" id="menu-chips"><!-- JS --></div>
+      </div>
+    </div>
+    <div class="container-rm">
+      <div id="menu-sections"><!-- JS --></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--sand" id="about">
+    <div class="container-rm">
+      <div class="about-grid">
+        <div class="about-copy" data-aos="fade-up">
+          <span class="section__eyebrow" data-ar="عن المطعم" data-en="About us">عن المطعم</span>
+          <h2 class="section__title" data-ar="حكاية نكهة من قلب جدة" data-en="A flavor story from Jeddah">حكاية نكهة من قلب جدة</h2>
+          <p data-ar="في مطاعم الرمال نقدّم الكبسات والأكلات الشعبية اليمنية على أصولها: المعصوب، العريكة، المرسى، والملوح بأنواعه، إضافة إلى كبسة رز أبو بنت الأحمر والأبيض. نطبخ على الحطب والتنور بخلطة بهارات خاصة منذ سنوات." data-en="At Alremal we serve authentic Yemeni & Saudi classics: ma'soub, areeka, marsa and malooh, plus our famous Abu Bint red & white rice kabsa — slow-cooked over fire and clay oven with our own spice blend.">في مطاعم الرمال نقدّم الكبسات والأكلات الشعبية اليمنية على أصولها: المعصوب، العريكة، المرسى، والملوح بأنواعه، إضافة إلى كبسة رز أبو بنت الأحمر والأبيض. نطبخ على الحطب والتنور بخلطة بهارات خاصة منذ سنوات.</p>
+          <div class="about-features">
+            <div class="about-feature"><i class="fa-solid fa-fire-burner"></i><div><b data-ar="على الحطب والتنور" data-en="Fire & clay oven">على الحطب والتنور</b><span data-ar="طبخ تقليدي أصيل" data-en="Authentic slow cooking">طبخ تقليدي أصيل</span></div></div>
+            <div class="about-feature"><i class="fa-solid fa-clock"></i><div><b data-ar="خدمة ٢٤ ساعة" data-en="24-hour service">خدمة ٢٤ ساعة</b><span data-ar="نستقبلكم طوال اليوم" data-en="We're open all day">نستقبلكم طوال اليوم</span></div></div>
+            <div class="about-feature"><i class="fa-solid fa-truck-fast"></i><div><b data-ar="توصيل سريع" data-en="Fast delivery">توصيل سريع</b><span data-ar="عبر كل المنصات" data-en="On all platforms">عبر كل المنصات</span></div></div>
+            <div class="about-feature"><i class="fa-solid fa-bowl-food"></i><div><b data-ar="ذبائح ومناسبات" data-en="Catering & events">ذبائح ومناسبات</b><span data-ar="استعداد تام للحفلات" data-en="Ready for your events">استعداد تام للحفلات</span></div></div>
+          </div>
+        </div>
+        <div class="about-visual" data-aos="fade-up" style="background-image:url('assets/images/brand/cover.jpg')"></div>
+      </div>
+
+      <div class="catering-cta" data-aos="fade-up">
+        <svg class="dunes" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0,80 C 360,30 720,120 1440,60"></path><path d="M0,130 C 400,80 760,160 1440,110"></path></svg>
+        <h3 data-ar="ذبائح · حفلات · مناسبات" data-en="Whole lamb · Parties · Events">ذبائح · حفلات · مناسبات</h3>
+        <p data-ar="استعداد تام لتجهيز طلبات المناسبات الكبيرة. تواصل معنا لتفصيل طلبك." data-en="Fully equipped for large event orders. Contact us to tailor your order.">استعداد تام لتجهيز طلبات المناسبات الكبيرة. تواصل معنا لتفصيل طلبك.</p>
+        <a class="btn-rm btn-gold" href="https://wa.me/966500549144?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20طلبات%20المناسبات" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span data-ar="اطلب عرض سعر" data-en="Request a quote">اطلب عرض سعر</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section" id="location">
+    <div class="container-rm">
+      <div class="section__head" data-aos="fade-up">
+        <span class="section__eyebrow" data-ar="الموقع وأوقات العمل" data-en="Location & hours">الموقع وأوقات العمل</span>
+        <h2 class="section__title" data-ar="تجدنا هنا" data-en="Find us here">تجدنا هنا</h2>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-map" id="loc-map" data-map="https://www.google.com/maps?q=Alremal+Restaurant+Al+Wurud+Jeddah&output=embed" data-aos="fade-up">
+          <div class="loc-map__facade">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p data-ar="مطاعم الرمال — حي الورود، جدة" data-en="Alremal Restaurant — Al-Wurood, Jeddah">مطاعم الرمال — حي الورود، جدة</p>
+            <button class="btn-rm btn-sm-rm" id="loc-map-load" type="button"><i class="fa-solid fa-map"></i> <span data-ar="افتح الخريطة التفاعلية" data-en="Open interactive map">افتح الخريطة التفاعلية</span></button>
+          </div>
+        </div>
+        <div class="loc-info" data-aos="fade-up">
+          <div class="loc-item"><i class="fa-solid fa-location-dot"></i><div><b data-ar="العنوان" data-en="Address">العنوان</b><span data-ar="جدة — الفيحاء، حي الورود (غرناطة سابقاً)، قرب جامع حسن عناني." data-en="Jeddah — Al-Faihaa, Al-Wurood district, near Hassan Enany Mosque.">جدة — الفيحاء، حي الورود (غرناطة سابقاً)، قرب جامع حسن عناني.</span><br><a href="https://maps.app.goo.gl/AbrVd1vJABMHLxi37" target="_blank" rel="noopener" data-ar="افتح في خرائط جوجل ←" data-en="Open in Google Maps →">افتح في خرائط جوجل ←</a></div></div>
+          <div class="loc-item"><i class="fa-solid fa-phone"></i><div><b data-ar="اتصل بنا" data-en="Call us">اتصل بنا</b><span dir="ltr">0126033003 · 0500549144 · 0537703005</span></div></div>
+          <div class="loc-item"><i class="fa-solid fa-clock"></i><div style="width:100%"><b data-ar="أوقات العمل" data-en="Opening hours">أوقات العمل</b>
+            <table class="hours-table" id="hours-table">
+              <tr data-day="0"><td data-ar="الأحد" data-en="Sunday">الأحد</td><td>11:00 AM – 2:00 AM</td></tr>
+              <tr data-day="1"><td data-ar="الإثنين" data-en="Monday">الإثنين</td><td>11:00 AM – 2:00 AM</td></tr>
+              <tr data-day="2"><td data-ar="الثلاثاء" data-en="Tuesday">الثلاثاء</td><td>11:00 AM – 2:00 AM</td></tr>
+              <tr data-day="3"><td data-ar="الأربعاء" data-en="Wednesday">الأربعاء</td><td>11:30 AM – 2:00 AM</td></tr>
+              <tr data-day="4"><td data-ar="الخميس" data-en="Thursday">الخميس</td><td>11:00 AM – 2:00 AM</td></tr>
+              <tr data-day="5"><td data-ar="الجمعة" data-en="Friday">الجمعة</td><td>12:30 PM – 2:00 AM</td></tr>
+              <tr data-day="6"><td data-ar="السبت" data-en="Saturday">السبت</td><td>11:00 AM – 2:00 AM</td></tr>
+            </table>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="section section--tint" id="delivery">
+    <div class="container-rm">
+      <div class="section__head" data-aos="fade-up">
+        <span class="section__eyebrow" data-ar="اطلبنا أونلاين" data-en="Order online">اطلبنا أونلاين</span>
+        <h2 class="section__title" data-ar="متوفرون على كل المنصات" data-en="Available on every platform">متوفرون على كل المنصات</h2>
+      </div>
+      <div class="delivery-grid" data-aos="fade-up">
+        <a class="delivery-card" href="#" target="_blank" rel="noopener"><img class="dl-logo" src="assets/images/delivery/keeta.png" alt="Keeta" loading="lazy">Keeta</a>
+        <a class="delivery-card" href="https://hungerstation.com/sa-ar/restaurant/%D8%AC%D8%AF%D8%A9/%D8%A7%D9%84%D9%88%D8%B1%D9%88%D8%AF/44241" target="_blank" rel="noopener"><img class="dl-logo" src="assets/images/delivery/hungerstation.png" alt="HungerStation" loading="lazy">HungerStation</a>
+        <a class="delivery-card" href="#" target="_blank" rel="noopener"><img class="dl-logo" src="assets/images/delivery/mrsool.png" alt="Mrsool" loading="lazy">Mrsool</a>
+        <a class="delivery-card" href="#" target="_blank" rel="noopener"><img class="dl-logo" src="assets/images/delivery/jahez.png" alt="Jahez" loading="lazy">Jahez</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <svg class="dunes" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true"><path d="M0,160 C 360,90 720,220 1440,120"></path><path d="M0,230 C 400,160 760,280 1440,200"></path><path d="M0,300 C 360,240 780,360 1440,270"></path></svg>
+    <div class="container-rm">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/brand/logo.jpg" alt="مطاعم الرمال">
+          <p data-ar="نكهات شعبية يمنية وسعودية أصيلة، تُطبخ على الحطب والتنور في قلب جدة — حي الورود." data-en="Authentic Yemeni & Saudi flavors, fire-cooked in the heart of Jeddah — Al-Wurood.">نكهات شعبية يمنية وسعودية أصيلة، تُطبخ على الحطب والتنور في قلب جدة — حي الورود.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/restaurant_alrmal" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.snapchat.com/add/restaurant_alrmal" target="_blank" rel="noopener" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="https://www.facebook.com/restaurant_alrmal" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-ar="روابط سريعة" data-en="Quick links">روابط سريعة</h4>
+          <a href="#menu" class="hscroll" data-ar="المنيو" data-en="Menu">المنيو</a>
+          <a href="#specialties" class="hscroll" data-ar="الأطباق المميزة" data-en="Signature dishes">الأطباق المميزة</a>
+          <a href="#about" class="hscroll" data-ar="عن المطعم" data-en="About">عن المطعم</a>
+          <a href="#location" class="hscroll" data-ar="الموقع وأوقات العمل" data-en="Location & hours">الموقع وأوقات العمل</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-ar="حمّل تطبيقنا" data-en="Get our app">حمّل تطبيقنا</h4>
+          <div class="app-badges">
+            <a class="app-badge" href="#" target="_blank" rel="noopener" aria-label="Google Play"><img src="assets/images/stores/ar_badge_web_generic.png" data-ar-src="assets/images/stores/ar_badge_web_generic.png" data-en-src="assets/images/stores/en_badge_web_generic.png" alt="Google Play"></a>
+            <a class="app-badge" href="#" target="_blank" rel="noopener" aria-label="App Store"><img src="assets/images/stores/app-store-badge-ar.png" data-ar-src="assets/images/stores/app-store-badge-ar.png" data-en-src="assets/images/stores/app-store-badge-en.png" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-ar="© ٢٠٢٦ مطاعم الرمال — جميع الحقوق محفوظة." data-en="© 2026 Alremal Restaurant — All rights reserved.">© ٢٠٢٦ مطاعم الرمال — جميع الحقوق محفوظة.</span>
+        <span class="dev"><span data-ar="تطوير وتنفيذ" data-en="Designed & developed by">تطوير وتنفيذ</span> <a href="https://highestweb.com" target="_blank" rel="noopener">HighestWeb</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="wa-float" href="https://wa.me/966500549144" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <!-- CART DRAWER -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="سلة الطلبات">
+    <div class="cart-drawer__head">
+      <h3><i class="fa-solid fa-basket-shopping"></i> <span data-ar="سلة الطلبات" data-en="Your order">سلة الطلبات</span></h3>
+      <button class="cart-close" id="cart-close" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer__items" id="cart-items"></div>
+    <div class="cart-drawer__foot" id="cart-foot" hidden>
+      <div class="cart-row"><span data-ar="المجموع الفرعي" data-en="Subtotal">المجموع الفرعي</span><span id="cart-subtotal">0 ر.س</span></div>
+      <div class="cart-row"><span data-ar="رسوم التوصيل" data-en="Delivery">رسوم التوصيل</span><span>8 ر.س</span></div>
+      <div class="cart-row total"><span data-ar="الإجمالي" data-en="Total">الإجمالي</span><span id="cart-total">0 ر.س</span></div>
+      <button class="btn-rm btn-block-rm" id="checkout-btn"><i class="fa-solid fa-credit-card"></i> <span data-ar="إتمام الطلب" data-en="Checkout">إتمام الطلب</span></button>
+      <a class="btn-rm btn-wa btn-block-rm" id="wa-order-btn" style="margin-top:10px" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span data-ar="أرسل الطلب عبر واتساب" data-en="Send order via WhatsApp">أرسل الطلب عبر واتساب</span></a>
+    </div>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div class="rm-modal" id="product-modal" role="dialog" aria-modal="true">
+    <div class="rm-modal__backdrop" data-close></div>
+    <div class="rm-modal__dialog">
+      <button class="rm-modal__close" data-close aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+      <div class="pm__media" id="pm-media"></div>
+      <div class="pm__body">
+        <h3 class="pm__title" id="pm-title"></h3>
+        <p class="pm__desc" id="pm-desc"></p>
+        <div class="pm__meta">
+          <span class="cal-badge" id="pm-cal"></span>
+          <span class="pm__price" id="pm-price"></span>
+        </div>
+        <button class="btn-rm btn-block-rm" id="pm-add"><i class="fa-solid fa-plus"></i> <span data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="rm-modal" id="checkout-modal" role="dialog" aria-modal="true">
+    <div class="rm-modal__backdrop" data-close></div>
+    <div class="rm-modal__dialog">
+      <button class="rm-modal__close" data-close aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+      <div class="co__head"><h3 class="co__title" data-ar="إتمام الطلب" data-en="Checkout">إتمام الطلب</h3></div>
+      <div class="co__steps"><div class="co__step active"></div><div class="co__step"></div><div class="co__step"></div></div>
+      <div id="co-body"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="rm-toast" id="toast"><i class="fa-solid fa-circle-check"></i> <span id="toast-msg"></span></div>
+
+  <!-- SCRIPTS (your public stack) -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/popper/popper.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/menu-data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>
