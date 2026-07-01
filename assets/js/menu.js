@@ -5,8 +5,9 @@
 
   var DATA = window.SITE_DATA || { categories: [] };
   var BRAND = (DATA.restaurant && DATA.restaurant.name_en) ? String(DATA.restaurant.name_en).split(' ')[0].toUpperCase() : 'CARD';
-  var DELIVERY_FEE = 8;
-  var WA = '966500549144';
+  var CFG = window.SITE_CONFIG || {};
+  var DELIVERY_FEE = (CFG.deliveryFee != null) ? CFG.deliveryFee : 8;
+  var WA = CFG.whatsapp || '966500549144';
   var CART_KEY = 'site_cart_v1';
   var PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23eddcc1'/%3E%3Ccircle cx='50' cy='50' r='22' fill='none' stroke='%23c8a24c' stroke-width='3'/%3E%3Cpath d='M50 38v24M38 50h24' stroke='%23c0142b' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E";
 
@@ -17,6 +18,9 @@
   function lang() { return (window.siteLang && window.siteLang()) || 'ar'; }
   function t(ar, en) { return lang() === 'en' ? en : ar; }
   function money(n) { return n + ' ' + t('ر.س', 'SAR'); }
+  function iname(it) { return (lang() === 'en' && it.name_en) ? it.name_en : it.name_ar; }
+  function idesc(it) { return (lang() === 'en' && it.desc_en) ? it.desc_en : (it.desc_ar || ''); }
+  function cname(c) { return (lang() === 'en' && c.name_en) ? c.name_en : c.name_ar; }
   function $(s, ctx) { return (ctx || document).querySelector(s); }
   function cdnT(it) { return it.cdn ? it.cdn + '?width=512&quality=100&webp=true' : ''; }
   function cdnL(it) { return it.cdn ? it.cdn + '?width=1024&quality=100&webp=true' : ''; }
@@ -46,7 +50,7 @@
     DATA.categories.forEach(function (cat) {
       var b = document.createElement('button');
       b.className = 'menu-chip';
-      b.textContent = cat.name;
+      b.textContent = cname(cat);
       b.dataset.target = cat.slug;
       b.addEventListener('click', function () {
         var sec = document.getElementById(cat.slug);
@@ -74,7 +78,7 @@
     media.className = 'menu-card__media';
     var img = document.createElement('img');
     img.className = 'menu-card__img';
-    img.alt = it.name;
+    img.alt = iname(it);
     bindImg(img, it.thumb, cdnT(it));
     media.appendChild(img);
     media.insertAdjacentHTML('beforeend', '<span class="menu-card__zoom"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span>');
@@ -83,8 +87,8 @@
     var body = document.createElement('div');
     body.className = 'menu-card__body';
     body.innerHTML =
-      '<h4 class="menu-card__name">' + esc(it.name) + '</h4>' +
-      (it.desc ? '<p class="menu-card__desc">' + esc(it.desc) + '</p>' : '<p class="menu-card__desc"></p>') +
+      '<h4 class="menu-card__name">' + esc(iname(it)) + '</h4>' +
+      (idesc(it) ? '<p class="menu-card__desc">' + esc(idesc(it)) + '</p>' : '<p class="menu-card__desc"></p>') +
       '<div class="menu-card__meta">' + calBadge(it) +
       '<span class="price">' + it.price + ' <span class="cur">' + t('ر.س', 'SAR') + '</span></span></div>';
 
@@ -109,7 +113,7 @@
       sec.id = cat.slug;
       sec.dataset.cat = cat.id;
       sec.innerHTML =
-        '<div class="menu-cat__head"><h3 class="menu-cat__title">' + esc(cat.name) + '</h3>' +
+        '<div class="menu-cat__head"><h3 class="menu-cat__title">' + esc(cname(cat)) + '</h3>' +
         '<span class="menu-cat__rule"></span>' +
         '<span class="menu-cat__count">' + cat.items.length + ' ' + t('صنف', 'items') + '</span></div>';
       var grid = document.createElement('div');
@@ -135,7 +139,7 @@
       c.className = 'spec-card';
       c.style.backgroundImage = "url('" + (it.thumb || cdnT(it)) + "')";
       c.innerHTML = '<span class="spec-card__tag">' + t('مميز', 'Signature') + '</span>' +
-        '<div class="spec-card__body"><div class="spec-card__name">' + esc(it.name) + '</div>' +
+        '<div class="spec-card__body"><div class="spec-card__name">' + esc(iname(it)) + '</div>' +
         '<div class="spec-card__price">' + money(it.price) + '</div></div>';
       c.addEventListener('click', function () { openProduct(it); });
       row.appendChild(c);
@@ -145,7 +149,7 @@
   // ---------- cart ----------
   function addToCart(it, srcImg) {
     var u = it._uid;
-    if (!cart[u]) cart[u] = { name: it.name, price: it.price, thumb: it.thumb, cdn: it.cdn, qty: 0 };
+    if (!cart[u]) cart[u] = { name_ar: it.name_ar, name_en: it.name_en, price: it.price, thumb: it.thumb, cdn: it.cdn, qty: 0 };
     cart[u].qty++;
     save(); updateCart();
     if (srcImg) flyToCart(srcImg);
@@ -177,11 +181,11 @@
       var line = document.createElement('div');
       line.className = 'cart-line';
       var img = document.createElement('img');
-      img.className = 'cart-line__img'; img.alt = c.name;
+      img.className = 'cart-line__img'; img.alt = iname(c);
       bindImg(img, c.thumb, c.cdn ? c.cdn + '?width=512&quality=100&webp=true' : '');
       var main = document.createElement('div');
       main.className = 'cart-line__main';
-      main.innerHTML = '<p class="cart-line__name">' + esc(c.name) + '</p>' +
+      main.innerHTML = '<p class="cart-line__name">' + esc(iname(c)) + '</p>' +
         '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">' +
         '<span class="qty-stepper"><button class="qty-btn" data-act="dec">−</button>' +
         '<span class="qty-val">' + c.qty + '</span>' +
@@ -202,7 +206,7 @@
   }
 
   function waLink() {
-    var lines = Object.keys(cart).map(function (u) { return '• ' + cart[u].name + ' ×' + cart[u].qty + ' = ' + (cart[u].price * cart[u].qty) + ' ر.س'; });
+    var lines = Object.keys(cart).map(function (u) { return '• ' + cart[u].name_ar + ' ×' + cart[u].qty + ' = ' + (cart[u].price * cart[u].qty) + ' ر.س'; });
     var msg = 'السلام عليكم،\nأرغب بطلب من مطاعم الرمال:\n' + lines.join('\n') +
       '\n\nالمجموع: ' + subtotal() + ' ر.س (+ رسوم التوصيل ' + DELIVERY_FEE + ' ر.س)';
     return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
@@ -233,8 +237,8 @@
   function openProduct(it) {
     modalItem = it;
     $('#pm-media').style.backgroundImage = "url('" + (it.large || cdnL(it) || it.thumb) + "')";
-    $('#pm-title').textContent = it.name;
-    $('#pm-desc').textContent = it.desc || '';
+    $('#pm-title').textContent = iname(it);
+    $('#pm-desc').textContent = idesc(it);
     var cal = $('#pm-cal');
     if (it.cal == null) { cal.style.display = 'none'; }
     else { cal.style.display = ''; cal.innerHTML = '<i class="fa-solid fa-fire-flame-curved"></i> ' + it.cal + ' ' + t('سعرة', 'cal'); }
@@ -428,7 +432,10 @@
   document.addEventListener('site:lang', function () { renderChips(); renderMenu(); renderSpecialties(); updateCart(); if (window.AOS) AOS.refreshHard(); });
 
   // demo notice modal — opens on every page load (after the loader fades)
-  window.addEventListener('load', function () {
-    setTimeout(function () { if (document.getElementById('demo-modal')) openModal('#demo-modal'); }, 700);
-  });
+  function maybeOpenDemo() {
+    var demoOn = !CFG.demo || CFG.demo.enabled !== false;
+    if (demoOn) setTimeout(function () { if (document.getElementById('demo-modal')) openModal('#demo-modal'); }, 700);
+  }
+  if (document.readyState === 'complete') maybeOpenDemo();
+  else window.addEventListener('load', maybeOpenDemo);
 })();

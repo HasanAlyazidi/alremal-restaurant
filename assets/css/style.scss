@@ -1,4 +1,4 @@
-@use 'sass:color';
+// Colours are CSS variables — defaults in :root below, overridable at runtime via config.js
 
 // ============================================================
 //  مطاعم الرمال — ALREMAL RESTAURANT
@@ -7,21 +7,21 @@
 //  classes over Bootstrap 4 grid, derived colors, variadic mixins.
 // ============================================================
 
-// ---- Palette (explicit, brand-driven) ----
-$ember:        #c0142b;   // brand red — primary CTA / price / accent
-$ember-dark:   color.scale($ember, $lightness: -16%);
-$ember-soft:   color.scale($ember, $lightness: 40%, $saturation: -10%);
-$maroon:       #531417;   // deep contrast blocks (hero/footer)
-$maroon-deep:  #3a0d10;
-$gold:         #c8a24c;   // eyebrows, dunes, hairlines, highlights
-$gold-soft:    #e7cf93;
-$sand-50:      #fbf5ea;   // page background (warm paper)
-$sand-100:     #f6ead6;
-$sand-200:     #eddcc1;   // alt sections / insets
-$ink:          #2a1e16;   // text on sand
-$muted:        #836f5c;   // secondary text
+// ---- Palette (CSS variables → set defaults in :root, override via config.js) ----
+$ember:        var(--ember);       // brand red — primary CTA / price / accent
+$ember-dark:   var(--ember-dark);
+$ember-soft:   var(--ember-soft);
+$maroon:       var(--maroon);      // deep contrast blocks (hero/footer)
+$maroon-deep:  var(--maroon-deep);
+$gold:         var(--gold);        // eyebrows, dunes, hairlines, highlights
+$gold-soft:    var(--gold-soft);
+$sand-50:      var(--sand-50);     // page background (warm paper)
+$sand-100:     var(--sand-100);
+$sand-200:     var(--sand-200);    // alt sections / insets
+$ink:          var(--ink);         // text on sand
+$muted:        var(--muted);       // secondary text
 $white:        #ffffff;
-$line:         rgba(42, 30, 22, .12);
+$line:         var(--line);
 $ok:           #1f8a4c;
 
 // ---- Type ----
@@ -51,6 +51,15 @@ $maxw:      1200px;
 // ============================================================
 //  Base
 // ============================================================
+// CSS-variable defaults (config.js overrides these at runtime)
+:root {
+  --ember: #c0142b; --ember-dark: #a11123; --ember-soft: #e7a9b1;
+  --maroon: #531417; --maroon-deep: #3a0d10;
+  --gold: #c8a24c; --gold-soft: #e7cf93;
+  --sand-50: #fbf5ea; --sand-100: #f6ead6; --sand-200: #eddcc1;
+  --ink: #2a1e16; --muted: #836f5c; --line: rgba(42, 30, 22, .12);
+}
+
 * { box-sizing: border-box; }
 
 html { background: $sand-50; scroll-behavior: smooth; }

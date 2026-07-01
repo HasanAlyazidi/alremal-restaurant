@@ -32,7 +32,7 @@
         </span>
       </div>
       <div class="topbar__group hide-sm">
-        <a class="topbar__item" href="tel:+966500549144" dir="ltr"><i class="fa-solid fa-phone"></i> +966 50 054 9144</a>
+        <a class="topbar__item" id="topbar-phone-link" href="tel:+966500549144" dir="ltr"><i class="fa-solid fa-phone"></i> <span id="topbar-phone">+966 50 054 9144</span></a>
         <a class="topbar__item" href="#location" data-ar="جدة · حي الورود" data-en="Jeddah · Al-Wurood"><i class="fa-solid fa-location-dot"></i> <span data-ar="جدة · حي الورود" data-en="Jeddah · Al-Wurood">جدة · حي الورود</span></a>
       </div>
       <div class="topbar__group">
@@ -182,8 +182,8 @@
           </div>
         </div>
         <div class="loc-info" data-aos="fade-up">
-          <div class="loc-item"><i class="fa-solid fa-location-dot"></i><div><b data-ar="العنوان" data-en="Address">العنوان</b><span data-ar="جدة — حي الورود (غرناطة سابقاً)، قرب جامع الهباش." data-en="Jeddah — Al-Wurood district (formerly Granada), near Habash Mosque.">جدة — حي الورود (غرناطة سابقاً)، قرب جامع الهباش.</span><br><a href="https://maps.app.goo.gl/AbrVd1vJABMHLxi37" target="_blank" rel="noopener" data-ar="افتح في خرائط جوجل ←" data-en="Open in Google Maps →">افتح في خرائط جوجل ←</a></div></div>
-          <div class="loc-item"><i class="fa-solid fa-phone"></i><div><b data-ar="اتصل بنا" data-en="Call us">اتصل بنا</b><span dir="ltr">0126033003 · 0500549144 · 0537703005</span></div></div>
+          <div class="loc-item"><i class="fa-solid fa-location-dot"></i><div><b data-ar="العنوان" data-en="Address">العنوان</b><span id="loc-address" data-ar="جدة — حي الورود (غرناطة سابقاً)، قرب جامع الهباش." data-en="Jeddah — Al-Wurood district (formerly Granada), near Habash Mosque.">جدة — حي الورود (غرناطة سابقاً)، قرب جامع الهباش.</span><br><a id="loc-map-link" href="https://maps.app.goo.gl/AbrVd1vJABMHLxi37" target="_blank" rel="noopener" data-ar="افتح في خرائط جوجل ←" data-en="Open in Google Maps →">افتح في خرائط جوجل ←</a></div></div>
+          <div class="loc-item"><i class="fa-solid fa-phone"></i><div><b data-ar="اتصل بنا" data-en="Call us">اتصل بنا</b><span id="loc-phones" dir="ltr">0126033003 · 0500549144 · 0537703005</span></div></div>
           <div class="loc-item"><i class="fa-solid fa-clock"></i><div style="width:100%"><b data-ar="أوقات العمل" data-en="Opening hours">أوقات العمل</b>
             <table class="hours-table" id="hours-table">
               <tr data-day="0"><td data-ar="الأحد" data-en="Sunday">الأحد</td><td>11:00 AM – 2:00 AM</td></tr>
@@ -328,6 +328,7 @@
   <script src="assets/vendor/popper/popper.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/js/aos.js"></script>
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/menu-data.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/menu.js"></script>
