@@ -65,7 +65,7 @@
     });
 
     // ---- Language toggle ----
-    var lang = localStorage.getItem('rimal_lang') || 'ar';
+    var lang = localStorage.getItem('site_lang') || 'ar';
     applyLang(lang);
     $('#lang-toggle').on('click', function () {
       applyLang(document.documentElement.lang === 'ar' ? 'en' : 'ar');
@@ -89,9 +89,9 @@
         img.src = img.getAttribute(l === 'ar' ? 'data-ar-src' : 'data-en-src');
       });
       $('#lang-toggle').text(l === 'ar' ? 'EN' : 'ع');
-      localStorage.setItem('rimal_lang', l);
-      document.dispatchEvent(new CustomEvent('rimal:lang', { detail: l }));
+      localStorage.setItem('site_lang', l);
+      document.dispatchEvent(new CustomEvent('site:lang', { detail: l }));
     }
-    window.rimalLang = function () { return document.documentElement.lang || 'ar'; };
+    window.siteLang = function () { return document.documentElement.lang || 'ar'; };
   });
 })(jQuery);

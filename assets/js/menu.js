@@ -3,17 +3,18 @@
 (function () {
   'use strict';
 
-  var DATA = window.RIMAL_DATA || { categories: [] };
+  var DATA = window.SITE_DATA || { categories: [] };
+  var BRAND = (DATA.restaurant && DATA.restaurant.name_en) ? String(DATA.restaurant.name_en).split(' ')[0].toUpperCase() : 'CARD';
   var DELIVERY_FEE = 8;
   var WA = '966500549144';
-  var CART_KEY = 'rimal_cart_v1';
+  var CART_KEY = 'site_cart_v1';
   var PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23eddcc1'/%3E%3Ccircle cx='50' cy='50' r='22' fill='none' stroke='%23c8a24c' stroke-width='3'/%3E%3Cpath d='M50 38v24M38 50h24' stroke='%23c0142b' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E";
 
   var cart = load();
   var modalItem = null;
 
   // ---------- utils ----------
-  function lang() { return (window.rimalLang && window.rimalLang()) || 'ar'; }
+  function lang() { return (window.siteLang && window.siteLang()) || 'ar'; }
   function t(ar, en) { return lang() === 'en' ? en : ar; }
   function money(n) { return n + ' ' + t('ر.س', 'SAR'); }
   function $(s, ctx) { return (ctx || document).querySelector(s); }
@@ -320,7 +321,7 @@
       body.innerHTML =
         '<div class="co__panel"><p class="co__panel-title">' + t('الدفع', 'Payment') + '</p>' +
         '<div class="pay-card"><svg class="dunes" viewBox="0 0 300 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0,70 C 80,40 160,90 300,55"/><path d="M0,110 C 90,80 170,120 300,95"/></svg>' +
-        '<span class="pay-brand">RIMAL</span><div class="pay-card__chip"></div>' +
+        '<span class="pay-brand">' + BRAND + '</span><div class="pay-card__chip"></div>' +
         '<div class="pay-card__num" id="pc-num">•••• •••• •••• ••••</div>' +
         '<div class="pay-card__row"><span id="pc-name">' + t('الاسم على البطاقة', 'CARDHOLDER') + '</span><span id="pc-exp">MM/YY</span></div></div>' +
         '<div class="form-field"><label>' + t('رقم البطاقة', 'Card number') + '</label><input id="cc-num" inputmode="numeric" maxlength="19" placeholder="4242 4242 4242 4242"></div>' +
@@ -424,7 +425,7 @@
   updateCart();
   if (window.AOS) AOS.refreshHard();
   window.addEventListener('scroll', spyCats, { passive: true });
-  document.addEventListener('rimal:lang', function () { renderChips(); renderMenu(); renderSpecialties(); updateCart(); if (window.AOS) AOS.refreshHard(); });
+  document.addEventListener('site:lang', function () { renderChips(); renderMenu(); renderSpecialties(); updateCart(); if (window.AOS) AOS.refreshHard(); });
 
   // demo notice modal — opens on every page load (after the loader fades)
   window.addEventListener('load', function () {

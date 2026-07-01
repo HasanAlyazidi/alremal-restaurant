@@ -1,5 +1,5 @@
 /* Auto-generated from menu.json + manifest.json. Do not edit by hand. */
-window.RIMAL_DATA = {
+window.SITE_DATA = {
   "restaurant": {
     "name_ar": "مطاعم الرمال",
     "name_en": "ALREMAL RESTAURANT",
